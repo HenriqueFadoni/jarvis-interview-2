@@ -2,6 +2,6 @@
 
 ## Thought Process
 
-![Designing](https://imgur.com/a3zU0e5)
-![Chart Structure](https://imgur.com/47reXpu)
-![Steps and Notification Structure](https://imgur.com/4uecdHA)
+![Designing](https://i.imgur.com/a3zU0e5.jpg)
+![Chart Structure](https://i.imgur.com/47reXpu.jpg)
+![Steps and Notification Structure](https://i.imgur.com/4uecdHA.jpg)
