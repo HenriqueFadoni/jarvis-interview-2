@@ -1,11 +1,13 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react'
 
-const App: FunctionComponent = () => {
-  return (
-    <div className="App">
+import ListWidget from './components/ListWidget/ListWidget'
 
-    </div>
-  );
-}
+const App: FunctionComponent = () => (
+  <div>
+    <ListWidget 
+      list={['List 1', 'List 2', 'List 3']}
+    />
+  </div>
+)
 
-export default App;
+export default App
