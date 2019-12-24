@@ -1,4 +1,7 @@
-import React, { FunctionComponent, useState, useEffect } from 'react'
+import React, { FunctionComponent, memo } from 'react'
+
+import DropBox from '../DropBox/DropBox'
+import Widget from '../Widget/Widget'
 
 interface ListWidgetProps {
   list: string[]
@@ -6,23 +9,19 @@ interface ListWidgetProps {
 
 // Add On Click Event => Changes Redux State (Selected Item)
 const ListWidget: FunctionComponent<ListWidgetProps> = ({ list }) => {
-  const [renderList, setRenderList] = useState()
-
-  useEffect(() => {
-    const newRenderList = list.map((item, index) => (
-      <div key={index}>
-        <h3>{item}</h3>
-      </div>
-    ));
-
-    setRenderList(newRenderList)
-  }, [list])
+  const newRenderList = list.map((item, index) => (
+    <div key={index}>
+      <h3>{item}</h3>
+    </div>
+  ));
 
   return (
-    <div>
-      {renderList}
-    </div>
+    <DropBox>
+      <Widget id="ListWidget">
+        {newRenderList}
+      </Widget>
+    </DropBox>
   )
 }
 
-export default ListWidget
+export default memo(ListWidget)
