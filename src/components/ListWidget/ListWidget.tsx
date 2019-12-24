@@ -15,7 +15,7 @@ const ListWidget: FunctionComponent<ListWidgetProps> = ({ list }) => {
       </div>
     ));
 
-    setRenderList(newRenderList);
+    setRenderList(newRenderList)
   }, [list])
 
   return (
