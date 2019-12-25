@@ -1,4 +1,5 @@
 import React, { FunctionComponent, memo } from 'react'
+import { useDispatch } from 'react-redux'
 
 import { selectList } from '../../store/actions/index'
 
@@ -20,15 +21,14 @@ interface ListWidgetProps {
 }
 
 const ListWidget: FunctionComponent<ListWidgetProps> = ({ chartList }) => {
-  list: string[]
+  const dispatch = useDispatch()
+
+  const onClickHandler = (chart: Chart) => {
+    dispatch(selectList(chart))
   }
 
   const newRenderList = chartList.map((item, index) => (
-// Add On Click Event => Changes Redux State (Selected Item)
-const ListWidget: FunctionComponent<ListWidgetProps> = ({ list }) => {
-  const newRenderList = list.map((item, index) => (
-    <div key={index}>
-      <h3>{item}</h3>
+    <div onClick={() => onClickHandler(item)} key={index}>
       <h3>{item.name}</h3>
     </div>
   ));
