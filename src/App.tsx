@@ -3,6 +3,7 @@ import React, { FunctionComponent } from 'react'
 import ListWidget from './components/ListWidget/ListWidget'
 import DropBox from './components/DropBox/DropBox'
 import ChartWidget from './components/ChartWidget/ChartWidget'
+import NotificationWidget from './components/NotificationWidget/NotificationWidget'
 
 const listExample = [
   {
@@ -40,6 +41,7 @@ const App: FunctionComponent = () => (
     <ListWidget chartList={listExample} />
     <DropBox />
     <ChartWidget />
+    <NotificationWidget />
     <DropBox />
   </div>
 )
