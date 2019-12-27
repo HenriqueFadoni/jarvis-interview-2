@@ -1,0 +1,16 @@
+.DropBox {
+  position: relative;
+  overflow: scroll;
+}
+
+.Resize {
+  display: block;
+  width: 10px;
+  height: 10px;
+  cursor: nwse-resize;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}

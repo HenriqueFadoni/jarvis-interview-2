@@ -1,7 +1,11 @@
 import React, { FunctionComponent, ReactNode } from 'react'
 
+import './DropBox.css';
+
 interface DropBoxProps {
-  children?: ReactNode
+  children?: ReactNode,
+  startWidth?: number,
+  startHeight?: number
 }
 
 const onDrop = (event: any) => {
@@ -14,18 +18,50 @@ const onDragOver = (event: React.DragEvent<HTMLDivElement>) => {
   event.preventDefault()
 }
 
-const DropBox: FunctionComponent<DropBoxProps> = ({ children }) => (
+let parent: HTMLDivElement;
+let width: number;
+let height: number;
+let startX: number;
+let startY: number;
+const resizeComponent = (env: any) => {
+  parent.style.width = `${env.clientX + width - startX}px`
+  parent.style.height = `${env.clientY + height - startY}px`
+}
+
+const cleanUpEvents = (env: any) => {
+  document.removeEventListener('mousemove', resizeComponent)
+  document.removeEventListener('mouseup', cleanUpEvents)
+}
+
+const onResizeStart = (event: any) => {
+  event.preventDefault()
+  parent = event.target.parentNode
+  width = Number(getComputedStyle(parent).width.replace('px', ''))
+  height = Number(getComputedStyle(parent).height.replace('px', ''))
+  startX = event.clientX;
+  startY = event.clientY;
+
+  document.addEventListener('mousemove', resizeComponent)
+  document.addEventListener('mouseup', cleanUpEvents)
+}
+
+const DropBox: FunctionComponent<DropBoxProps> = ({ children, startWidth = 100, startHeight = 100 }) => (
   <div
+    className="DropBox"
     onDrop={onDrop}
     onDragOver={onDragOver}
     style={{
       margin: '10px',
       backgroundColor: 'grey',
-      width: '100px',
-      height: '100px'
+      width: `${startWidth}px`,
+      height: `${startHeight}px`,
     }}
   >
     {children}
+    <span
+      className="Resize"
+      onMouseDown={onResizeStart}
+    />
   </div>
 )
 

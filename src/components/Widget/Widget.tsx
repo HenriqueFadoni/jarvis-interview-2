@@ -18,6 +18,10 @@ const Widget: FunctionComponent<WidgetProps> = ({ id, children }) => (
     id={id}
     onDragStart={onDragStart}
     onDragOver={onDragOver}
+    style={{
+      height: '100%',
+      width: '100%'
+    }}
     draggable
   >
     {children}
