@@ -38,3 +38,44 @@
   background-color: $color-black;
   color: $color-white;
 }
+
+// Notification Widget
+.notification-widget {
+	&__container {
+		width: 100%;
+
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		grid-row-gap: 1rem;
+	}
+
+	&__btn {
+		font-size: 1.5rem;
+		color: $color-white;
+		padding: 0.5rem;
+		background-color: $color-grey-light;
+		box-shadow: 0 -5px 10px 2px $color-black;
+		border: none;
+
+		transition: all .5s;
+	}
+
+	&__btn:hover {
+		background-color: darken($color-grey-light, 10%);
+	}
+
+	&__notification {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		background-color: $color-black;
+		padding: 1rem;
+
+		button {
+			color: $color-white;
+			background-color: transparent;
+			border: none;
+		}
+	}
+}

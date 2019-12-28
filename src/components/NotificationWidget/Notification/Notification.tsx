@@ -16,16 +16,24 @@ const Notification: FunctionComponent = () => {
     setNotificationList([ ...newNotificationList])
   }
 
-  const renderList = notificationList.map((item: any, index: any) => (
-    <div key={index}>
+  const renderList = notificationList.map((item: string, index: number) => (
+    <div 
+      className="notification-widget__notification" 
+      key={index}
+    >
       <h3>{item}</h3>
       <button onClick={() => deleteEvent(item)}>X</button>
     </div>
   ))
 
   return (
-    <div>
-      <button onClick={onClick}>New Notification</button>
+    <div className="notification-widget__container">
+      <button
+        className="notification-widget__btn"
+        onClick={onClick}
+      >
+        New Notification
+      </button>
       {renderList}
     </div>
   )
