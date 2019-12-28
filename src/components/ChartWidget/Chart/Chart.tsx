@@ -1,22 +1,28 @@
-import React, { FunctionComponent, memo, useEffect, useState } from 'react'
+import React, { FunctionComponent, memo, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
-import { createChart } from 'lightweight-charts';
+import { createChart } from 'lightweight-charts'
+import { ListReducerState } from '../../../store/types/reducerTypes'
 
+let chart: any;
+let lineSeries: any;
 const Chart: FunctionComponent = () => {
-  const { selectedList } = useSelector((state: any) => state)
+  const { selectedList } = useSelector((state: ListReducerState) => state)
+  const chartRoot = useRef()
 
   useEffect(() => {
     if (selectedList && selectedList.data) {
-      const selectChartDiv = document.querySelector('#chart-root')
+      if (!chart) {
         // @ts-ignore
-        const chart = createChart(selectChartDiv, { width: 400, height: 300 })
-        const lineSeries = chart.addLineSeries()
-        lineSeries.setData(selectedList.data)
-    }
-  }, [selectedList]);
+        chart = createChart(chartRoot.current, { width: 400, height: 300 })
+        lineSeries = chart.addLineSeries()
+      }
 
-  return selectedList ? <div id='chart-root'></div> : <h3>Select a List</h3>
+      lineSeries.setData(selectedList.data)
+    }
+  }, [selectedList])
+  // @ts-ignore
+  return selectedList ? <div ref={chartRoot}></div> : <h3>Select a Chart</h3>
 }
 
 export default memo(Chart)
