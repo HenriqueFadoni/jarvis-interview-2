@@ -1,7 +1,5 @@
 import React, { FunctionComponent, ReactNode } from 'react'
 
-import './DropBox.css';
-
 interface DropBoxProps {
   children?: ReactNode,
   startWidth?: number,
@@ -47,19 +45,17 @@ const onResizeStart = (event: any) => {
 
 const DropBox: FunctionComponent<DropBoxProps> = ({ children, startWidth = 100, startHeight = 100 }) => (
   <div
-    className="DropBox"
+    className="drop-box"
     onDrop={onDrop}
     onDragOver={onDragOver}
     style={{
-      margin: '10px',
-      backgroundColor: 'grey',
       width: `${startWidth}px`,
       height: `${startHeight}px`,
     }}
   >
     {children}
     <span
-      className="Resize"
+      className="drop-box__resize"
       onMouseDown={onResizeStart}
     />
   </div>
