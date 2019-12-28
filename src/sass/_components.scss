@@ -21,3 +21,20 @@
 	}
 }
 
+// List Widget
+.list-widget {
+	padding: 0.5rem;
+	margin: 1rem;
+	border-radius: 0.4rem;
+	background-color: $color-white;
+	text-align: center;
+	color: $color-black-light;
+  cursor: pointer;
+  
+  transition: all .5s;
+}
+
+.list-widget:hover {
+  background-color: $color-black;
+  color: $color-white;
+}

@@ -28,7 +28,10 @@ const ListWidget: FunctionComponent<ListWidgetProps> = ({ chartList }) => {
   }
 
   const newRenderList = chartList.map((item, index) => (
-    <div onClick={() => onClickHandler(item)} key={index}>
+    <div 
+      className="list-widget"
+      onClick={() => onClickHandler(item)} key={index}
+    >
       <h3>{item.name}</h3>
     </div>
   ));
