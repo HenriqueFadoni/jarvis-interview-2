@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react'
 
-import './sass/main.scss'
-
 import ListWidget from './components/ListWidget/ListWidget'
 import DropBox from './components/DropBox/DropBox'
 import ChartWidget from './components/ChartWidget/ChartWidget'
