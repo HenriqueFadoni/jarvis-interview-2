@@ -1,7 +1,5 @@
 import React, { FunctionComponent } from 'react'
 
-import './sass/main.scss'
-
 import ListWidget from './components/ListWidget/ListWidget'
 import DropBox from './components/DropBox/DropBox'
 import ChartWidget from './components/ChartWidget/ChartWidget'
@@ -9,7 +7,7 @@ import NotificationWidget from './components/NotificationWidget/NotificationWidg
 
 const listExample = [
   {
-    name: 'Chart 1',
+    name: 'List 1',
     data: [
       { time: '2019-04-11', value: 80.01 },
       { time: '2019-04-12', value: 96.63 },
@@ -20,7 +18,7 @@ const listExample = [
     ]
   },
   {
-    name: 'Chart 2',
+    name: 'List 2',
     data: [
       { time: '2019-04-17', value: 96.63 },
       { time: '2019-04-18', value: 76.64 },
@@ -29,7 +27,7 @@ const listExample = [
     ]
   },
   {
-    name: 'Chart 3',
+    name: 'List 3',
     data: [
       { time: '2019-04-13', value: 76.64 },
       { time: '2019-04-14', value: 81.89 },
