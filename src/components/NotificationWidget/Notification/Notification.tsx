@@ -1,19 +1,18 @@
 import React, { FunctionComponent, useState } from 'react'
 
 const Notification: FunctionComponent = () => {
-  const [notificationList, setNotificationList] = useState([])
+  const [notificationList, setNotificationList] = useState<string[]>([])
 
   const onClick = () => {
-    const newNotificationList = notificationList
-    const newNotification = `List ${notificationList.length}`
-    // @ts-ignore
+    const newNotificationList: string[] = notificationList
+    const newNotification = `Notification ${notificationList.length}`
     newNotificationList.push(newNotification)
-    setNotificationList([ ...newNotificationList])
+    setNotificationList([...newNotificationList])
   }
 
   const deleteEvent = (item: string) => {
     const newNotificationList = notificationList.filter(el => el !== item)
-    setNotificationList([ ...newNotificationList])
+    setNotificationList([...newNotificationList])
   }
 
   const renderList = notificationList.map((item: string, index: number) => (
