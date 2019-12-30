@@ -1,26 +1,13 @@
 import React, { FunctionComponent, memo } from 'react'
 import { useDispatch } from 'react-redux'
+import { ChartList, Chart } from '../../store/types/chartList'
 
 import { selectList } from '../../store/actions/index'
 
 import DropBox from '../DropBox/DropBox'
 import Widget from '../Widget/Widget'
 
-interface ChartData {
-  time: string,
-  value: number
-}
-
-interface Chart {
-  name: string,
-  data: Array<ChartData>
-}
-
-interface ListWidgetProps {
-  chartList: Array<Chart>
-}
-
-const ListWidget: FunctionComponent<ListWidgetProps> = ({ chartList }) => {
+const ListWidget: FunctionComponent<ChartList> = ({ chartList }) => {
   const dispatch = useDispatch()
 
   const onClickHandler = (chart: Chart) => {
@@ -28,7 +15,7 @@ const ListWidget: FunctionComponent<ListWidgetProps> = ({ chartList }) => {
   }
 
   const newRenderList = chartList.map((item, index) => (
-    <div 
+    <div
       className="list-widget"
       onClick={() => onClickHandler(item)} key={index}
     >
