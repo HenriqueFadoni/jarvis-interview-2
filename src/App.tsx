@@ -1,11 +1,7 @@
 import React, { FunctionComponent } from 'react'
 
 import './sass/main.scss'
-
-import ListWidget from './components/ListWidget/ListWidget'
-import DropBox from './components/DropBox/DropBox'
-import ChartWidget from './components/ChartWidget/ChartWidget'
-import NotificationWidget from './components/NotificationWidget/NotificationWidget'
+import DashboardWidgets from './components/DashboardWidgets/DashboardWidgets'
 
 const listExample = [
   {
@@ -39,12 +35,9 @@ const listExample = [
 ];
 
 const App: FunctionComponent = () => (
-  <div>
-    <ListWidget chartList={listExample} />
-    <DropBox />
-    <ChartWidget />
-    <NotificationWidget />
-    <DropBox />
+  <div className="dashboard-container">
+    <h1>DashBoard Example</h1>
+    <DashboardWidgets chartList={listExample} />
   </div>
 )
 

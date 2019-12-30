@@ -3,7 +3,8 @@ import React, { FunctionComponent, ReactNode } from 'react'
 interface DropBoxProps {
   children?: ReactNode,
   startWidth?: number,
-  startHeight?: number
+  startHeight?: number,
+  direction?: string
 }
 
 const onDrop = (event: any) => {
@@ -21,29 +22,35 @@ let width: number;
 let height: number;
 let startX: number;
 let startY: number;
-const resizeComponent = (env: any) => {
-  parent.style.width = `${env.clientX + width - startX}px`
-  parent.style.height = `${env.clientY + height - startY}px`
+let resizeDirection: string;
+const resizeComponent = (event: any) => {
+  if (resizeDirection === 'right') {
+    parent.style.width = `${startX + width - event.clientX}px`
+  } else {
+    parent.style.width = `${event.clientX + width - startX}px`
+  }
+  parent.style.height = `${event.clientY + height - startY}px`
 }
 
-const cleanUpEvents = (env: any) => {
+const cleanUpEvents = () => {
   document.removeEventListener('mousemove', resizeComponent)
   document.removeEventListener('mouseup', cleanUpEvents)
 }
 
-const onResizeStart = (event: any) => {
+const onResizeStart = (event: any, direction: string) => {
   event.preventDefault()
   parent = event.target.parentNode
   width = Number(getComputedStyle(parent).width.replace('px', ''))
   height = Number(getComputedStyle(parent).height.replace('px', ''))
-  startX = event.clientX;
-  startY = event.clientY;
+  startX = event.clientX
+  startY = event.clientY
+  resizeDirection = direction
 
   document.addEventListener('mousemove', resizeComponent)
   document.addEventListener('mouseup', cleanUpEvents)
 }
 
-const DropBox: FunctionComponent<DropBoxProps> = ({ children, startWidth = 100, startHeight = 100 }) => (
+const DropBox: FunctionComponent<DropBoxProps> = ({ children, startWidth = 100, startHeight = 100, direction = 'left' }) => (
   <div
     className="drop-box"
     onDrop={onDrop}
@@ -55,8 +62,8 @@ const DropBox: FunctionComponent<DropBoxProps> = ({ children, startWidth = 100, 
   >
     {children}
     <span
-      className="drop-box__resize"
-      onMouseDown={onResizeStart}
+      className={`drop-box__resize--${direction}`}
+      onMouseDown={(event: any) => onResizeStart(event, direction)}
     />
   </div>
 )
