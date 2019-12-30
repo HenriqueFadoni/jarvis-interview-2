@@ -11,3 +11,18 @@ export const selectList = (selectedList: Chart): AppActions => {
     }
   }
 }
+
+export const newNotification = (): AppActions => {
+  return {
+    type: actionTypes.NEW_NOTIFICATION
+  }
+}
+
+export const deleteNotification = (notificationItem: string): AppActions => {
+  return {
+    type: actionTypes.DELETE_NOTIFICATION,
+    payload: {
+      notificationItem
+    }
+  }
+}

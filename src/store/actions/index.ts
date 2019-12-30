@@ -1,3 +1,5 @@
 export {
-  selectList
+  selectList,
+  newNotification,
+  deleteNotification
 } from './listAction'
