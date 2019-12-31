@@ -1,8 +1,8 @@
 import React, { FunctionComponent, memo } from 'react'
 import { useDispatch } from 'react-redux'
-import { ChartList, Chart } from '../../store/types/chartList'
+import { ChartList, Chart } from '../../../store/types/chartList'
 
-import { selectList } from '../../store/actions/index'
+import { selectList } from '../../../store/actions/index'
 
 import DropBox from '../DropBox/DropBox'
 import Widget from '../Widget/Widget'

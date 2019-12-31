@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react'
 
 import './sass/main.scss'
-import DashboardContent from './components/DashboardContent/DashboardContent'
-import DashboardWidgets from './components/DashboardWidgets/DashboardWidgets'
+import DashboardContent from './components/Dashboard/DashboardContent/DashboardContent'
+import DashboardWidgets from './components/Dashboard/DashboardWidgets/DashboardWidgets'
 
 const listExample = [
   {

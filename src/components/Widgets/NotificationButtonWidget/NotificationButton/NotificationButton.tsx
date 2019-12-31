@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import { useDispatch } from 'react-redux'
 
-import { newNotification } from '../../../store/actions/index'
+import { newNotification } from '../../../../store/actions/index'
 
 const NotificationButton: FunctionComponent = () => {
   const dispatch = useDispatch()

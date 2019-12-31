@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import { ChartList } from '../../store/types/chartList'
+import { ChartList } from '../../../store/types/chartList'
 
 import DashboardLeft from './DashboardLeft/DashboardLeft'
 import DashboardRight from './DashboardRight/DashboardRight'

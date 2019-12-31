@@ -2,7 +2,7 @@ import React, { FunctionComponent, memo, useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
 
 import { createChart } from 'lightweight-charts'
-import { ListReducerState } from '../../../store/types/reducerTypes'
+import { ListReducerState } from '../../../../store/types/reducerTypes'
 
 let chart: any;
 let lineSeries: any;

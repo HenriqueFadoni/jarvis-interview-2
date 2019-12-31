@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 
-import DropBox from '../../DropBox/DropBox'
-import NotificationButtonWidget from '../../NotificationButtonWidget/NotificationButtonWidget'
+import DropBox from '../../../Widgets/DropBox/DropBox'
+import NotificationButtonWidget from '../../../Widgets/NotificationButtonWidget/NotificationButtonWidget'
 
 const DashboardRight: FunctionComponent = () => (
   <div className="dashboard-widgets--right">

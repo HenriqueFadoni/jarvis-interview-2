@@ -1,5 +1,5 @@
 import React, { FunctionComponent, memo } from 'react'
-import { ChartList } from '../../store/types/chartList'
+import { ChartList } from '../../../store/types/chartList'
 
 const DashboardContent: FunctionComponent<ChartList> = ({ chartList }) => {
   const renderList = chartList.map((chart, index) => {

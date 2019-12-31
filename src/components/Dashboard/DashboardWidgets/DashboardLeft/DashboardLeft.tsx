@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react'
-import { ChartList } from '../../../store/types/chartList'
+import { ChartList } from '../../../../store/types/chartList'
 
-import ListWidget from '../../ListWidget/ListWidget'
-import ChartWidget from '../../ChartWidget/ChartWidget'
-import NotificationListWidget from '../../NotificationListWidget/NotificationListWidget'
+import ListWidget from '../../../Widgets/ListWidget/ListWidget'
+import ChartWidget from '../../../Widgets/ChartWidget/ChartWidget'
+import NotificationListWidget from '../../../Widgets/NotificationListWidget/NotificationListWidget'
 
 const DashboardLeft: FunctionComponent<ChartList> = ({ chartList }) => (
   <div className="dashboard-widgets--left">

@@ -1,7 +1,7 @@
 import React, { FunctionComponent, memo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { deleteNotification } from '../../../store/actions'
+import { deleteNotification } from '../../../../store/actions'
 
 const Notification: FunctionComponent = () => {
   const { notificationList } = useSelector((state: any) => state)
