@@ -10,9 +10,7 @@ import Widget from '../Widget/Widget'
 const ListWidget: FunctionComponent<ChartList> = ({ chartList }) => {
   const dispatch = useDispatch()
 
-  const onClickHandler = (chart: Chart) => {
-    dispatch(selectList(chart))
-  }
+  const onClickHandler = (chart: Chart) => dispatch(selectList(chart))
 
   const newRenderList = chartList.map((item, index) => (
     <div
