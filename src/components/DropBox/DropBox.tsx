@@ -24,11 +24,10 @@ let startX: number;
 let startY: number;
 let resizeDirection: string;
 const resizeComponent = (event: any) => {
-  if (resizeDirection === 'right') {
-    parent.style.width = `${startX + width - event.clientX}px`
-  } else {
-    parent.style.width = `${event.clientX + width - startX}px`
-  }
+  parent.style.width = resizeDirection === 'right'
+    ? `${startX + width - event.clientX}px`
+    : `${event.clientX + width - startX}px`
+
   parent.style.height = `${event.clientY + height - startY}px`
 }
 
