@@ -1,46 +1,88 @@
-.dashboard-container {
-  position: relative;
-  min-height: 100vh;
-  min-width: 100vw;
-  background-color: rgb(92, 79, 79);
-
-  display: flex;
-  justify-content: center;
-  padding: 3rem;
-  font-size: 1.3rem;
-  color: $color-white;
-  overflow: scroll;
-}
-
-.dashboard-widgets {
-  width: 100%;
-  position: absolute;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
-
-  &--left {
-    grid-column-start: 0;
-    grid-column-end: 2;
-    grid-row-start: 0;
-    grid-row-end: -1;
-
-    width: 100%;
+.dashboard {
+  &-container {
+    position: relative;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: rgb(92, 79, 79);
+  
     display: flex;
-    flex-direction: column;
-    justify-self: left;
+    justify-content: center;
+    padding: 3rem;
+    font-size: 1.3rem;
+    color: $color-white;
+    overflow: scroll;
   }
 
-  &--right {
-    grid-column-start: 2;
-    grid-column-end: -1;
-    grid-row-start: 1;
-    grid-row-end: -1;
+  &-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10rem auto;
+    grid-row-gap: 2rem;
 
+    justify-items: center;
+  }
+  
+  &-table {
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-row-gap: 1.5rem;
+    }
+
+    &__row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-column-gap: 2rem;
+
+
+      &--header {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 7;
+      }
+
+      &--cell {
+        width: 15rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &-widgets {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    position: absolute;
+  
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  
+    &--left {
+      grid-column-start: 0;
+      grid-column-end: 2;
+      grid-row-start: 0;
+      grid-row-end: -1;
+  
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-self: left;
+    }
+  
+    &--right {
+      grid-column-start: 2;
+      grid-column-end: -1;
+      grid-row-start: 1;
+      grid-row-end: -1;
+  
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
   }
 }

@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react'
 
 import './sass/main.scss'
+import DashboardContent from './components/DashboardContent/DashboardContent'
 import DashboardWidgets from './components/DashboardWidgets/DashboardWidgets'
 
 const listExample = [
@@ -36,7 +37,7 @@ const listExample = [
 
 const App: FunctionComponent = () => (
   <div className="dashboard-container">
-    <h1>DashBoard Example</h1>
+    <DashboardContent chartList={listExample}/>
     <DashboardWidgets chartList={listExample} />
   </div>
 )
