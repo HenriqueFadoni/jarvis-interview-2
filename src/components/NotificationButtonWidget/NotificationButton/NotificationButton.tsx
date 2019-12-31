@@ -6,9 +6,7 @@ import { newNotification } from '../../../store/actions/index'
 const NotificationButton: FunctionComponent = () => {
   const dispatch = useDispatch()
 
-  const onClick = () => {
-    dispatch(newNotification())
-  }
+  const onClick = () => dispatch(newNotification())
 
   return (
     <button
